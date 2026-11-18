@@ -14,7 +14,7 @@ Documentation
 -------------
 
 If you contribute anything that changes the behavior of the
-application, document it in the [README](https://github.com/xmidt-org/webcfg/blob/master/README.md) or [wiki](https://github.com/xmidt-org/webcfg/wiki)! This includes new features, additional variants of behavior and breaking changes.
+application, document it in the [README](https://github.com/rdkcentral/webcfg/blob/develop/README.md) or [wiki](https://github.com/xmidt-org/webcfg/wiki)! This includes new features, additional variants of behavior and breaking changes.
 
 Testing
 -------
