@@ -9,4 +9,3 @@ rdkcentral organization, where ongoing maintenance and development now take plac
 - Current repository: https://github.com/rdkcentral/webcfg
 
 [![Build Status](https://github.com/rdkcentral/webcfg/workflows/CI/badge.svg)](https://github.com/rdkcentral/webcfg/actions)
-[![codecov.io](http://codecov.io/github/rdkcentral/webcfg/coverage.svg?branch=develop)](http://codecov.io/github/rdkcentral/webcfg?branch=develop)
