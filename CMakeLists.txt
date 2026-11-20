@@ -1,4 +1,4 @@
-#   Copyright 2020
+#   Copyright 2020 Comcast Cable Communications Management, LLC
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ add_dependencies(libmsgpack msgpack)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(trower-base64
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/trower-base64
-    GIT_REPOSITORY https://github.com/Comcast/trower-base64.git
+    GIT_REPOSITORY https://github.com/rdkcentral/trower-base64.git
     GIT_TAG "fbb9440ae2bc1118866baefcea7ff814f16613dd"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 )
@@ -97,7 +97,7 @@ add_dependencies(libtrower-base64 trower-base64)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(wdmp-c
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/wdmp-c
-    GIT_REPOSITORY https://github.com/Comcast/wdmp-c.git
+    GIT_REPOSITORY https://github.com/rdkcentral/wdmp-c.git
     GIT_TAG "f9f687b6b4b10c2b72341e792a64334f0a409848"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DBUILD_TESTING=OFF
@@ -109,7 +109,7 @@ add_dependencies(libwdmp-c wdmp-c)
 #-------------------------------------------------------------------------------
 ExternalProject_Add(cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/cimplog
-    GIT_REPOSITORY https://github.com/Comcast/cimplog.git
+    GIT_REPOSITORY https://github.com/rdkcentral/cimplog.git
     GIT_TAG "1.0.2"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
 )
@@ -148,7 +148,7 @@ endif()
 ExternalProject_Add(wrp-c
 	DEPENDS trower-base64 msgpack cimplog
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/wrp-c
-    GIT_REPOSITORY https://github.com/Comcast/wrp-c.git
+    GIT_REPOSITORY https://github.com/rdkcentral/wrp-c.git
     GIT_TAG "1.0.1"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}
                   -DMSGPACK_ENABLE_CXX=OFF
@@ -178,7 +178,7 @@ add_dependencies(libnanomsg nanomsg)
 ExternalProject_Add(libparodus
     DEPENDS trower-base64 msgpack nanomsg wrp-c
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/_prefix/libparodus
-    GIT_REPOSITORY https://github.com/Comcast/libparodus.git
+    GIT_REPOSITORY https://github.com/rdkcentral/libparodus.git
     GIT_TAG "1.0.2"
     CMAKE_ARGS += -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR} -DBUILD_TESTING=OFF
 	-DMAIN_PROJ_BUILD=ON
