@@ -10,3 +10,13 @@ rdkcentral organization, where ongoing maintenance and development now take plac
 
 [![Build Status](https://github.com/rdkcentral/webcfg/workflows/CI/badge.svg)](https://github.com/rdkcentral/webcfg/actions)
 [![Apache V2 License](http://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/rdkcentral/webcfg/blob/develop/LICENSE)
+
+# Building and Testing Instructions
+
+```
+mkdir build
+cd build
+cmake ..
+make
+make test
+```
