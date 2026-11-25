@@ -108,7 +108,6 @@ WEBCFG_STATUS initDB(char * db_file_path )
      if ((fstat(fd, &st) != 0) || (!S_ISREG(st.st_mode))) {
 	WebcfgError("The file is not regular file \n");
 	fclose(fp);
-	close(fd);	     
 	return WEBCFG_FAILURE;  
      }
   
@@ -119,7 +118,6 @@ WEBCFG_STATUS initDB(char * db_file_path )
      {
          WebcfgError("fread failed.\n");
 	 fclose(fp);
-	 close(fd);
          return WEBCFG_FAILURE;
      }
      fseeko(fp, 0, SEEK_SET);
@@ -128,7 +126,6 @@ WEBCFG_STATUS initDB(char * db_file_path )
      {
          WebcfgError("Memory allocation for data failed.\n");
          fclose(fp);
-         close(fd);
          return WEBCFG_FAILURE;
      }
      memset(data,0,(ch_count + 1));
@@ -136,17 +133,12 @@ WEBCFG_STATUS initDB(char * db_file_path )
      if (sz == (size_t)-1) 
 	{	
 		fclose(fp);
-                close(fd);
 		WebcfgError("fread failed.\n");
 		WEBCFG_FREE(data);
 		return WEBCFG_FAILURE;
 	}
      len = ch_count;
      fclose(fp);
-     /* TEMP REPRO ONLY: widen the fclose()/close() window. Remove after test. */
-     WebcfgInfo("REPRO: sleeping between fclose and close\n");
-     usleep(50000);
-     close(fd);	
      dm = decodeData((void *)data, len);
      if(NULL == dm)
      {
