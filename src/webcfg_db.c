@@ -143,6 +143,9 @@ WEBCFG_STATUS initDB(char * db_file_path )
 	}
      len = ch_count;
      fclose(fp);
+     /* TEMP REPRO ONLY: widen the fclose()/close() window. Remove after test. */
+     WebcfgInfo("REPRO: sleeping between fclose and close\n");
+     usleep(5000);
      close(fd);	
      dm = decodeData((void *)data, len);
      if(NULL == dm)
